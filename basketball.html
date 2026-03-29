@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basketball Game Form</title>
+  {% load static %}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url("{% static 'sports_app/images/image12.jpeg' %}") no-repeat center center fixed;
+      margin: 0;
+      background-size: cover;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 400px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;  /* stacked (default) */
+      justify-content: center;  
+      align-items: center; 
+              
+    }
+    .btn {
+      display: block;
+      width: 50%;
+      text-align: center;
+      padding: 12px;
+      margin-top: 12px;
+      background: #27ae60;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #0ddef9;
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    .btn {
+      width: 50%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Basketball Game Details</h2>
+    <form action="{% url 'basketball' %}" method="post">
+        {% csrf_token %}
+        
+      <div class="form-group">
+        <label for="team1">Team 1 Name:</label>
+        <input type="text" id="team1" placeholder="Team 1 Name" name="Team_1_Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="team2">Team 2 Name:</label>
+        <input type="text" id="team2" placeholder="Team 2 Name" name="Team_2_Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Match Date:</label>
+        <input type="date" id="date" name="Match_Date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Match Time:</label>
+        <input type="time" id="time" name="Match_Time" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="Location" placeholder="Stadium / Ground">
+      </div>
+
+      <div class="form-group">
+        <label for="score">Final Score:</label>
+        <input type="text" id="score" name="Final_Score" placeholder="e.g., 2 - 1">
+      </div>
+
+      <div class="form-group">
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="Remarks" placeholder="Enter highlights or notes"></textarea>
+      </div>
+
+      <div class="button-group">
+      <button type="submit" class="btn">Submit</button>
+      <a href="{% url 'bdetails' %}" class="btn">See Result</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
