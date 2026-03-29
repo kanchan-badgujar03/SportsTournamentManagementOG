@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        a {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* keeps text same color as parent */
+}
+
+        ul.sports-list {
+            list-style: none;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        ul.sports-list li {
+            background: #f4f4f4;
+            margin: 8px 0;
+            padding: 12px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        ul.sports-list li:hover {
+            background: #cce5ff;
+            transform: translateX(5px);
+            
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003366;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>See the result of matches</h1>
+    </header>
+
+    <div class="container">
+        
+        <ul class="sports-list">
+            <li><a href="{% url 'fdetails' %}">⚽ Football</a></li>
+            <li><a href="{% url 'bdetails' %}">🏀 Basketball</a></li>
+            <li>🏏 Cricket</li>
+           
+            <li>🏐 Volleyball</li>
+            
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sports Management | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
