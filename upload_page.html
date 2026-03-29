@@ -1,0 +1,43 @@
+<h2 style="text-align: center; margin-bottom: 20px;">Upload New Schedule</h2>
+
+<div class="upload-container">
+    <form method="post" enctype="multipart/form-data" class="upload-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class=" upload-button">Upload</button>
+</div>
+        
+    </form>
+</div>
+
+<style>
+/* Container to center the form */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Form styles */
+.upload-form {
+    background-color: #f7f7f7;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12
+}
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.upload-button:hover {
+    background-color: #45a049;
+}
