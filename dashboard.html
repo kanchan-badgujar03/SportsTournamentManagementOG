@@ -1,0 +1,249 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  {% load static %}
+  <style>
+/* Facilities Section */
+#facilities {
+  margin: 50px 0;
+  text-align: center;
+}
+#facilities h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.facilities-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.facility-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+.facility-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.facility-card h3 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+.facility-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+#schedule {
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#schedule h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 3px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+   height: 30px;
+  width: 30px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+   height: 30px;
+  width: 30px;
+}
+
+.schedule-table th {
+  background: #2c3e50;
+  color: #fff;
+  font-size: 16px;
+   height: 30px;
+  width: 30px;
+}
+
+.schedule-table tr:nth-child(even) {
+  background: #f2f2f2;
+   height: 30px;
+  width: 30px;
+}
+
+.schedule-table tr:hover {
+  background: #ffeaa7;
+  transition: 0.3s;
+  height: 30px;
+  width: 30px;
+  
+}
+
+#food-stay {
+  margin: 50px 0;
+  text-align: center;
+}
+#food-stay h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.facility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.facility-table th, .facility-table td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+.facility-table th {
+  background: #34495e;
+  color: #fff;
+  font-size: 1rem;
+}
+.facility-table td {
+  font-size: 0.95rem;
+  color: #555;
+}
+.facility-table img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.facility-table tr:hover {
+  background: #f9f9f9;
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- Players Facilities Section -->
+<section id="facilities">
+  <h2>Players' Facilities</h2>
+  <div class="facilities-container">
+
+    <!-- Food -->
+    <div class="facility-card">
+      <img src="{% static 'sports_app/images/image9.jpg' %}" alt="Food Facility">
+      <h3>🍽️ Food</h3>
+      <p>
+        Nutritious meals and refreshments will be provided to all players during the tournament. 
+        Breakfast, lunch, dinner, and energy drinks will be served at the venue dining hall.
+      </p>
+    </div>
+
+    <!-- Stay -->
+    <div class="facility-card">
+      <img src="{% static 'sports_app/images/image10.webp' %}" alt="Stay Facility">
+      <h3>🏨 Stay</h3>
+      <p>
+        Comfortable accommodation has been arranged for players and coaches. 
+        Rooms include basic amenities like Wi-Fi, clean bedding, and 24x7 support.
+      </p>
+    </div>
+
+    <!-- Other Details -->
+    <div class="facility-card">
+      <img src="{% static 'sports_app/images/image11.webp' %}" alt="Other Facilities">
+      <h3>⚽ Other Facilities</h3>
+      <p>
+        Medical support, practice grounds, transport facilities, and a recreation zone 
+        will be available to ensure a smooth and enjoyable tournament experience.
+      </p>
+    </div>
+
+
+  </div>
+  
+    <!-- Players Food & Stay Schedule Section -->
+<section id="food-stay">
+  <h2>Players' Food & Stay Schedule</h2>
+  <table class="facility-table">
+    <thead>
+      <tr>
+        <th>Facility</th>
+        <th>Image</th>
+        <th>Timing</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Food Row -->
+      <tr>
+        <td>🍽️ Food</td>
+        <td><img src="{% static 'sports_app/images/image9.jpg' %}" alt="Food"></td>
+        <td>
+          Breakfast: 7:00 AM – 9:00 AM <br>
+          Lunch: 1:00 PM – 2:30 PM <br>
+          Dinner: 7:30 PM – 9:00 PM
+        </td>
+        <td>Nutritious meals with vegetarian & non-vegetarian options.</td>
+      </tr>
+
+      <!-- Stay Row -->
+      <tr>
+        <td>🏨 Stay</td>
+        <td><img src="{% static 'sports_app/images/image10.webp' %}" alt="Stay"></td>
+        <td>Check-in: Anytime after arrival <br> Check-out: By 11:00 AM</td>
+        <td>Comfortable rooms with Wi-Fi, clean bedding, and 24x7 support.</td>
+      </tr>
+
+      <!-- Practice Row -->
+      <tr>
+        <td>⚽ Practice</td>
+        <td><img src="{% static 'sports_app/images/image11.webp' %}" alt="Practice"></td>
+        <td>Morning: 6:00 AM – 8:00 AM <br> Evening: 5:00 PM – 7:00 PM</td>
+        <td>Grounds available for warm-ups and team practice sessions.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</body>
+</html>
+
+
