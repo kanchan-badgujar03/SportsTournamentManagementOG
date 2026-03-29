@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 0;
+    }
+    .admin-dashboard {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .admin-dashboard h1 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .admin-dashboard p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .admin-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .admin-actions a {
+      display: block;
+      padding: 12px;
+      background: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .admin-actions a:hover {
+      background: #005599;
+    }
+    .logout {
+      background: #cc0000 !important;
+    }
+    .logout:hover {
+      background: #990000 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-dashboard">
+    <h1>⚙️ Admin Dashboard</h1>
+    <p>Welcome, {{ request.user.username }}!</p>
+
+    <div class="admin-actions">
+      <a href="{% url 'add_sports' %}">⚽ Add Sports</a>
+      <a href="{% url 'update_sports_score' %}">📅 Update Match Score</a>
+      <a href="{% url 'upload_page' %}">👥 Update Schedule</a>
+      <a href="{% url 'result' %}">🏆 Manage Scores</a>
+      <a href="{% url 'home' %}" class="logout">🚪 Logout</a>
+    </div>
+  </div>
+</body>
+</html>
