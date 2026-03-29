@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block title %}{{ title }} | Sports Manager{% endblock %}
+{% block content %}
+<h1 class="title">{{ title }}</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="box">
+        {{ form.as_p }}
+        <button class="button is-link" type="submit">Save</button>
+        <a class="button is-light" href="javascript:history.back()">Cancel</a>
+    </div>
+</form>
+{% endblock %}
