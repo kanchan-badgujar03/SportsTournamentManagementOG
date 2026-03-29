@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Tournament Home</title>
+  {% load static %}
+  <style>
+    /* Reset and base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'sports_app/images/image3.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+     header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+    
+    header p {
+      font-size: 1rem;
+      color: #ddd;
+      text-align: center;
+    }
+    
+
+
+
+    nav {
+      
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .hero {
+      text-align:right;
+      position: absolute;  
+      right: 30px;  
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #fdd835;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .btn:hover {
+      background: #ffeb3b;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin: 40px 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+  position: absolute;   /* makes it stick to a fixed spot */
+  top: 20px;            /* distance from top */
+  left: 30px;           /* distance from left */
+}
+    .logo  img{
+  height: 90px;
+  width: auto;
+
+}
+
+    section h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+      border-bottom: 2px solid #f39c12;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    ul {
+      margin: 10px 0 0 20px;
+    }
+    #about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      height: auto;
+     
+    }
+    #about .text {
+      flex: 1;
+    }
+    #about .image {
+      flex: 1;
+      text-align: right;
+    }
+    #about .image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Prize Section */
+#prizes {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#prizes h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+  border-bottom: 3px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.prize-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.prize-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prize-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.prize-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.prize-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+  #gallery {
+  margin: 40px 0;
+  text-align: center;
+}
+#gallery h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <header class="tournament-header">
+        <div class="logo">
+  <img src="{% static 'sports_app/images/image1.jpg' %}" alt="Tournament Logo">
+  </div>
+  <div>
+    <h1>🏆 Annual Sports Tournament 2025</h1>
+    <p>Organized by Sports Club - Join the Excitement!</p>
+  </div>
+</header>
+
+  
+
+  <nav>
+    
+    <a href="{% url 'view_schedule' %}">Schedule</a>
+    <a href="{% url 'sports_list' %}">Sports</a>
+    <a href="{% url 'manage_teams' %}">Teams</a>
+    <a href="{% url 'result' %}">Results</a>
+    <a href="#contact">Contact</a>
+    <a href="{% url 'dashboard' %}">Facilities</a>
+    <div class="hero">
+    
+    <a href="{% url 'admin_login' %}" class="btn btn-add">Only For Admin</a>
+  
+    
+    
+    <a href="{% url 'manage_teams' %}" class="btn btn-add">Registration of Team</a>
+  </div>
+  </nav>
+  
+
+  <div class="container">
+    <!-- About Section -->
+<section id="about">
+    <div class="text">
+      <h2>About the Tournament</h2>
+      <marquee behavior="scroll" direction="up" scrollamount="5">
+      <p>
+        Welcome to the Annual Sports Tournament 2025! This event brings together athletes 
+        from schools and colleges to compete in various sports. 
+        Our aim is to encourage sportsmanship, teamwork, and fitness among youth. Sports tournaments 
+        play a vital role in promoting teamwork, discipline, and healthy competition among participants. 
+        They provide a platform to showcase talent, dedication, and respect for opponents. Beyond winning trophies, 
+        tournaments build confidence, friendships, and unforgettable memories for both players and spectators.
+      </marquee>
+    </p>
+    </div>
+    <div class="image">
+      <img src="{% static 'sports_app/images/image2.jpg' %}" alt="Sports Tournament">
+    </div>
+  </section>
+
+    <!-- Prize Section -->
+    <section id="prizes">
+  <h2>🏆 Prize Details</h2>
+  <div class="prize-container">
+    <div class="prize-card">
+      <h3>🥇 First Prize</h3>
+      <p>₹50,000 Cash + Trophy + Certificates</p>
+    </div>
+    <div class="prize-card">
+      <h3>🥈 Second Prize</h3>
+      <p>₹30,000 Cash + Medal + Certificates</p>
+    </div>
+    <div class="prize-card">
+      <h3>🥉 Third Prize</h3>
+      <p>₹15,000 Cash + Medal + Certificates</p>
+    </div>
+    <div class="prize-card">
+      <h3>🏅 Special Awards</h3>
+      <p>Best Player, Fair Play Award & More</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+  <h2>Related Photos</h2>
+  <div class="gallery-grid">
+    <img src="{% static 'sports_app/images/image5.jpg' %}" alt="Match 1">
+    <img src="{% static 'sports_app/images/image6.jpg' %}" alt="Match 2">
+    <img src="{% static 'sports_app/images/image7.webp' %}" alt="Match 3">
+    <img src="{% static 'sports_app/images/image8.jpg' %}" alt="Match 4">
+  </div>
+</section>
+
+    <!-- upcoming Section -->
+    
+    <section>
+    <h3>Upcoming Tournaments</h3>
+    <ul>
+      <li>🏏 Cricket Premier League – Starts Sept 2025</li>
+      <li>⚽ Inter-College Football Cup – Starts Oct 2025</li>
+      <li>🏀 National Basketball Tournament – Starts Nov 2025</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sports Club | Designed for Tournament Management</p>
+  </footer>
+
+</body>
+</html>
